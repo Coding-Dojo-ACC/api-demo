@@ -23,4 +23,14 @@ $(document).ready(function() {
             `)
         })
     })
+    $('.tunes').click(function() {
+        console.log("clicked tunes button")
+        $.get("https://looney-toons-api.herokuapp.com/api/characters", function(res) {
+            console.log(res)
+            $('.tune').html(`
+                <h4>${res.data[16].name}</h4>
+                <img src=${res.data[16].img} alt=${res.data[16].name} />
+            `)
+        })
+    })
 })
